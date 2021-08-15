@@ -126,7 +126,27 @@ dd['dogs'].append('Jack')
 print(dd['dogs']) # ['Tom', 'Jack']
 print(dd['dogss']) # []
 ```
+## Set (Unordered)
+- A set is an unordered collection of objects that doesn't allow duplicate elements.
+- It's very fast (O(1)) for searching operation then a list (O(n)).
+>Useful Methods: add(x), pop(), remove(x), clear(), copy(), union(another_set), intersection(another_set), difference(another_set), symmetric_difference(another_set)
+> Useful Operators for Set: &, |, -, ^
+```python
+s = {1,2,3,4}
+s.add(5)
+print(s) # {1, 2, 3, 4, 5}
+```
 
+## Frozenset (Unordered & Immutable)
+- The frozenset class implements an immutable version of set that can't be changed after it's been constructed.
+- If we want to create unchangeable set, We can use set.
+```python
+s = {1,2,3,4}
+fs = frozenset(s)
+fs.add(5)
+print(fs)
+# AttributeError: 'frozenset' object has no attribute 'add'
+```
 
 
 
