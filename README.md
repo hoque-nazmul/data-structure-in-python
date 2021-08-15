@@ -61,7 +61,7 @@ print(user) # ['Foo']
 ## Deque
 - The deque class implements a double-ended queue
 - supports adding and removing elements from either end in O(1) time
->append(x)/appendleft(x)/clear()/copy()/count(x)/extend(iterable)/extendleft(iterable)/index()/insert(i,x)/pop()/popleft()/remove(x)/reverse()/rotate(n=1)/maxlen()
+>Useful Methods: append(x)/appendleft(x)/clear()/copy()/count(x)/extend(iterable)/extendleft(iterable)/index()/insert(i,x)/pop()/popleft()/remove(x)/reverse()/rotate(n=1)/maxlen()
 ```python
 from collections import deque
 
@@ -76,6 +76,20 @@ print(dq) # deque(['Justin', 'John', 'Doe', 'Foo', 'Bar'])
 dq.popleft() # Remove data in first position on constant time O(1)
 print(dq) # deque(['John', 'Doe', 'Foo', 'Bar'])
 ```
+## Tuple (Immutable)
+- If we want to store no-changeable data, tuple is a good choice for that.
+- We can't add, update, remove data, only can read data of Tuple.
+>Useful Methods: index(x), count(x)
+```python
+tpl = (1,2,3,4)
+```
+```python
+# Create a Generator using Tuple Comprehension
+users = ("Joe", "John", "Root", "Justin", "Foo")
+gen = (item for item in users)
+print(type(gen)) # Output: <class 'generator'>
+```
+
 
 
 
