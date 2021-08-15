@@ -10,12 +10,12 @@
 - [Counter](#counter)
 - [heapq](#heapq)
 
-### List (Mutable)
-Python's list are implemented as dynamic arrays behind the scenes.
-Arrays store information in adjoining blocks of memory.
-Python List cab be hold arbitrary elements.
-It's very fast (O(1) -> Constant Time) for accessing, updating, adding (Only in the last position) and removing (Only in the last position) data. 
-But It's not a good choice for adding & removing data except in the last position of list. We can use deque for that.
+## List (Mutable)
+- Python's list are implemented as dynamic arrays behind the scenes.
+- Arrays store information in adjoining blocks of memory.
+- Python List cab be hold arbitrary elements.
+- It's very fast (O(1) -> Constant Time) for accessing, updating, adding (Only in the last position) and removing (Only in the last position) data. 
+- But It's not a good choice for adding & removing data except in the last position of list. We can use deque for that.
 >Useful Methods: index()/count()/append()/pop()/pop(index)/insert()/remove()/clear()/sort()/reverse()/extend()/copy()
 > [1,2,3,4,5]
 
@@ -57,5 +57,30 @@ print(user) # ['Justin', 'Foo']
 user.pop(0)
 print(user) # ['Foo']
 ```
+
+## Deque
+- The deque class implements a double-ended queue
+- supports adding and removing elements from either end in O(1) time
+>append(x)/appendleft(x)/clear()/copy()/count(x)/extend(iterable)/extendleft(iterable)/index()/insert(i,x)/pop()/popleft()/remove(x)/reverse()/rotate(n=1)/maxlen()
+```python
+from collections import deque
+
+li = ['John', 'Doe', 'Foo', 'Bar']
+dq = deque(li)
+print(dq)
+# deque(['John', 'Doe', 'Foo', 'Bar'])
+
+dq.appendleft('Justin') # Add data in first position on constant time O(1)
+print(dq) # deque(['Justin', 'John', 'Doe', 'Foo', 'Bar'])
+
+dq.popleft() # Remove data in first position on constant time O(1)
+print(dq) # deque(['John', 'Doe', 'Foo', 'Bar'])
+```
+
+
+
+
+
+
 
 
