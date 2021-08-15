@@ -89,6 +89,44 @@ users = ("Joe", "John", "Root", "Justin", "Foo")
 gen = (item for item in users)
 print(type(gen)) # Output: <class 'generator'>
 ```
+## Dictionary (Key/Value Pairs)
+- Also known as maps, hashmaps, lookup tables, associative arrays
+- Efficient Lookup, insertion and deletion
+>Useful Methods: get(x), pop(x), clear(), keys(dict), values(dict), items(dict), copy()
+
+#### Dictionary Comprehension
+```python
+nums = {x: x * x for x in range(1, 6)}
+print(nums)
+# Output: {1: 1, 2: 4, 3: 9, 4: 16, 5: 25}
+```
+#### Access & Add Data in Dictionary
+```python 
+# Access the Data
+person = { 'name': 'John Doe', 'country': 'usa', 'age': 30 }
+print(person['name']) # Output: John Doe
+print(person['country']) # Output: usa
+print(person.get('name')) # Output: John Doe
+
+# Add the Data
+person = { 'name': 'John Doe', 'country': 'usa', 'age': 30 }
+person['city'] = 'New York'
+print(person) 
+# Output: {'name': 'John Doe', 'country': 'usa', 'age': 30, 'city': 'New York'}
+```
+## Default Dictionary (Return Default Values for Missing Keys)
+- The defaultdict class is another dictionary subclass that accepts a callable in its constructor
+- It returns a default value if the requested key can not be found.
+```python
+from collections import defaultdict
+
+dd = defaultdict(list)
+dd['dogs'].append('Tom')
+dd['dogs'].append('Jack')
+print(dd['dogs']) # ['Tom', 'Jack']
+print(dd['dogss']) # []
+```
+
 
 
 
