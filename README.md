@@ -11,6 +11,7 @@
 - [heapq](#heapq)
 ---
 - [Doubly Linked List](#doubly-linked-list)
+- [Stack](#stack)
 
 ## List 
 - Python's list (Mutable) are implemented as dynamic arrays behind the scenes.
@@ -271,7 +272,45 @@ print(dbl) # [5, 10, 10]
 
 print(dbl.size) # 3
 ```
+## Stack 
+>Implementing Stack Using Linked List
+```python 
+from linked_list import DoubleLinkedList
 
+class Stack:
+    def __init__(self):
+        self.__list = DoubleLinkedList()
+
+    def is_empty(self):
+        return self.__list.size == 0
+
+    def push(self, val):
+        self.__list.add(val)
+
+    def pop(self):
+        if self.is_empty is not True:
+            last_item = self.__list.back()
+            self.__list.remove_last() 
+            return last_item
+
+    def peek(self):
+        if self.is_empty is not True: 
+            return self.__list.back()
+
+    def __len__(self):
+        return self.__list.size
+
+
+st = Stack()
+print(st.is_empty()) # True
+st.push(43) 
+st.push(40)
+st.push(90)
+print(len(st)) # 3
+print(st.pop()) # 90
+print(len(st)) # 2
+print(st.peek()) # 40
+```
 
 
 
