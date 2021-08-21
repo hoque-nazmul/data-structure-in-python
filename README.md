@@ -311,6 +311,35 @@ print(st.pop()) # 90
 print(len(st)) # 2
 print(st.peek()) # 40
 ```
+>Implementing Stack using Python List
+```python 
+class Stack:
+    def __init__(self):
+        self.__list = []
+    
+    def is_empty(self):
+        return len(self.__list) == 0
+
+    def push(self, val):
+        self.__list.append(val)
+
+    def pop(self):
+        return self.__list.pop()
+
+    def peek(self):
+        return self.__list[-1]
+
+    def get_stack(self):
+        return self.__list
+
+st = Stack()
+st.push(32)
+st.push(20)
+print(st.get_stack()) # [32, 20]
+print(st.pop()) # 20
+print(st.peek()) # 32
+print(st.get_stack()) # [32]
+```
 
 
 
