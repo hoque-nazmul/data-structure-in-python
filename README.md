@@ -12,6 +12,7 @@
 ---
 - [Doubly Linked List](#doubly-linked-list)
 - [Stack](#stack)
+- [Queue](#queue)
 
 ## List 
 - Python's list (Mutable) are implemented as dynamic arrays behind the scenes.
@@ -272,6 +273,8 @@ print(dbl) # [5, 10, 10]
 
 print(dbl.size) # 3
 ```
+**[⬆ back to top](#Data-Structure-in-Python)**
+
 ## Stack 
 >Implementing Stack Using Linked List
 ```python 
@@ -340,6 +343,8 @@ print(st.pop()) # 20
 print(st.peek()) # 32
 print(st.get_stack()) # [32]
 ```
+**[⬆ back to top](#Data-Structure-in-Python)**
+
 ## Queue
 >Implementing Queue using Linked List 
 ```python
@@ -409,6 +414,7 @@ print(qu.dequeue()) # 32
 print(qu.front()) # 53
 print(len(qu)) # 1
 ```
+**[⬆ back to top](#Data-Structure-in-Python)**
 
 
 
