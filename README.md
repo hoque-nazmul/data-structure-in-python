@@ -288,13 +288,13 @@ class Stack:
         self.__list.add(val)
 
     def pop(self):
-        if self.is_empty is not True:
+        if self.is_empty() is not True:
             last_item = self.__list.back()
             self.__list.remove_last() 
             return last_item
 
     def peek(self):
-        if self.is_empty is not True: 
+        if self.is_empty() is not True: 
             return self.__list.back()
 
     def __len__(self):
@@ -340,7 +340,75 @@ print(st.pop()) # 20
 print(st.peek()) # 32
 print(st.get_stack()) # [32]
 ```
+## Queue
+>Implementing Queue using Linked List 
+```python
+from linked_list import DoubleLinkedList 
 
+class Queue:
+    def __init__(self):
+        self.__list = DoubleLinkedList()
+
+    def is_empty(self):
+        return self.__list.size == 0 
+
+    def enqueue(self, val):
+        self.__list.add(val)
+
+    def dequeue(self):
+        if self.is_empty() is not True:
+            first_item = self.__list.front()
+            self.__list.remove_first() 
+            return first_item 
+
+    def front(self):
+        if self.is_empty() is not True: 
+            return self.__list.front()
+
+    def __len__(self):
+        return self.__list.size
+
+qu = Queue() 
+qu.enqueue(32)
+qu.enqueue(53)
+print(qu.front()) #32
+print(len(qu)) # 2
+print(qu.dequeue()) # 32 
+print(qu.front()) # 53
+print(len(qu)) # 1
+```
+>Implementing Queue using Python List
+```python 
+class Queue:
+    def __init__(self):
+        self.__list = [] 
+
+    def is_empty(self):
+        return len(self.__list) == 0 
+
+    def enqueue(self, val):
+        self.__list.append(val)
+
+    def dequeue(self):
+        if self.is_empty() is not True: 
+            return self.__list.pop(0)
+
+    def front(self):
+        if self.is_empty() is not True:
+            return self.__list[0]
+
+    def __len__(self):
+        return len(self.__list)
+
+qu = Queue() 
+qu.enqueue(32)
+qu.enqueue(53)
+print(qu.front()) #32
+print(len(qu)) # 2
+print(qu.dequeue()) # 32 
+print(qu.front()) # 53
+print(len(qu)) # 1
+```
 
 
 
