@@ -13,6 +13,8 @@
 - [Doubly Linked List](#doubly-linked-list)
 - [Stack](#stack)
 - [Queue](#queue)
+- [Tree](#tree)
+- [Tree Traversals (PreOrder,PostOrder,InOrder)](#tree-traversals(preorder,postorder,inorder))
 
 ## List 
 - Python's list (Mutable) are implemented as dynamic arrays behind the scenes.
@@ -416,7 +418,107 @@ print(len(qu)) # 1
 ```
 **[⬆ back to top](#Data-Structure-in-Python)**
 
+## Tree
+```python
+class TreeNode:
+    def __init__(self, data):
+        self.data = data  
+        self.left = None 
+        self.right = None 
+
+    def __repr__(self):
+        return repr(self.data)
+
+    def add_left(self, node):
+        self.left = node 
+
+    def add_right(self, node):
+        self.right = node 
+
+def create_tree():
+    two = TreeNode(2)
+    seven = TreeNode(7)
+    nine = TreeNode(9)
+    two.add_left(seven)
+    two.add_right(nine)
+
+    one = TreeNode(1)
+    six = TreeNode(6)
+    seven.add_left(one)
+    seven.add_right(six)
+
+    five = TreeNode(5)
+    ten = TreeNode(10)
+    six.add_left(five)
+    six.add_right(ten)
+
+    eight = TreeNode(8)
+    nine.add_right(eight)
+
+    three = TreeNode(3)
+    four = TreeNode(4)
+    eight.add_left(three)
+    eight.add_right(four)
+
+    return two 
+```
+## Tree Traversals (PreOrder,PostOrder,InOrder)
+#### Pre-Order
+```python
+from binary_tree import create_tree
+
+def pre_order(node):
+    print(node, end=", ")
+
+    if node.left:
+        pre_order(node.left)
+
+    if node.right:
+        pre_order(node.right)
 
 
+if __name__ == '__main__':
+    root = create_tree()
+    pre_order(root)
+
+# Output: 2, 7, 1, 6, 5, 10, 9, 8, 3, 4
+```
+#### Post-Order
+```python
+from binary_tree import create_tree
+
+def post_order(node):
+    if node.left:
+        post_order(node.left)
+
+    if node.right:
+        post_order(node.right)
+
+    print(node, end=', ')
 
 
+if __name__ == '__main__':
+    root = create_tree()
+    post_order(root)
+
+# Output: 1, 5, 10, 6, 7, 3, 4, 8, 9, 2
+```
+#### In-Order
+```python
+from binary_tree import create_tree
+
+def in_order(node):
+    if node.left:
+        in_order(node.left)
+
+    print(node, end=", ")
+
+    if node.right:
+        in_order(node.right)
+
+if __name__ == '__main__':
+    root = create_tree()
+    in_order(root)
+
+# Output: 1, 7, 5, 6, 10, 2, 9, 3, 8, 4
+```
