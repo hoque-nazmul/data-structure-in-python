@@ -14,7 +14,7 @@
 - [Stack](#stack)
 - [Queue](#queue)
 - [Tree](#tree)
-- [Tree Traversals (PreOrder,PostOrder,InOrder)](#tree-traversals(preorder,postorder,inorder))
+- [Tree Traversals (PreOrder,PostOrder,InOrder)](#tree-traversals-preorderpostorderinorder)
 
 ## List 
 - Python's list (Mutable) are implemented as dynamic arrays behind the scenes.
