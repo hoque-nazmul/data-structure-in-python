@@ -482,6 +482,28 @@ def create_tree():
 
     return two 
 ```
+> If we want to record the parent node, we have to do like that. (We can skip this primarily)
+```python
+class TreeNode:
+    def __init__(self, data):
+        self.data = data  
+        self.parent = None
+        self.left = None 
+        self.right = None 
+
+    def __repr__(self):
+        return repr(self.data)
+
+    def add_left(self, node):
+        self.left = node 
+        if node is not None:
+            node.parent = self
+
+    def add_right(self, node):
+        self.right = node 
+        if node is not None:
+            node.parent = self
+```
 **[⬆ back to top](#Data-Structure-in-Python)**
 
 ## Tree Traversals (PreOrder,PostOrder,InOrder)
