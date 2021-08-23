@@ -420,6 +420,18 @@ print(len(qu)) # 1
 
 ## Tree
 ```python
+                  (2)
+            _______|_______
+           |               |
+          (7)             (9)
+      _____|_____          |_____
+     |           |               |
+    (1)         (6)             (8)
+            _____|_____     _____|_____
+           |           |   |           |
+          (5)        (10) (3)         (4)
+```
+```python
 class TreeNode:
     def __init__(self, data):
         self.data = data  
@@ -465,7 +477,28 @@ def create_tree():
 **[⬆ back to top](#Data-Structure-in-Python)**
 
 ## Tree Traversals (PreOrder,PostOrder,InOrder)
+```python
+                  (2)
+            _______|_______
+           |               |
+          (7)             (9)
+      _____|_____          |_____
+     |           |               |
+    (1)         (6)             (8)
+            _____|_____     _____|_____
+           |           |   |           |
+          (5)        (10) (3)         (4)
+```
+> 2 is root node.
+> 2 is the parent of 7 & 9. 
+> 7 & 9 are the children of 2. They are also sibling of each other.
+> 5, 10, 3, 4 are leaf node.
+> the defth of (2) is 3 -> 0, 1, 2, 3 (From top to bottom)
+> the height of (4) is also 3 -> 0, 1, 2, 3 (From bottom to top)
+> the path of 5 is 5, 6, 7, 2
+> the level of 7,9 is 1 -> it's start from 0 like defth & height
 #### Pre-Order
+>First->root_node, then->left_node, then->right_node
 ```python
 from binary_tree import create_tree
 
@@ -486,6 +519,7 @@ if __name__ == '__main__':
 # Output: 2, 7, 1, 6, 5, 10, 9, 8, 3, 4
 ```
 #### Post-Order
+>First->left_node, then->right_node, then->root_node
 ```python
 from binary_tree import create_tree
 
@@ -506,6 +540,7 @@ if __name__ == '__main__':
 # Output: 1, 5, 10, 6, 7, 3, 4, 8, 9, 2
 ```
 #### In-Order
+>First->left_node, then->root_node, then->right_node
 ```python
 from binary_tree import create_tree
 
