@@ -462,6 +462,8 @@ def create_tree():
 
     return two 
 ```
+**[⬆ back to top](#Data-Structure-in-Python)**
+
 ## Tree Traversals (PreOrder,PostOrder,InOrder)
 #### Pre-Order
 ```python
@@ -522,3 +524,4 @@ if __name__ == '__main__':
 
 # Output: 1, 7, 5, 6, 10, 2, 9, 3, 8, 4
 ```
+**[⬆ back to top](#Data-Structure-in-Python)**
