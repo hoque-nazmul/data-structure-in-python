@@ -18,6 +18,7 @@
 - [Binary Search Tree](#binary-search-tree)
 - [Heap](#heap)
 - [Heap Sort](#heap-sort)
+- [Priority Queue](#priority-queue)
 
 ## List 
 - Python's list (Mutable) are implemented as dynamic arrays behind the scenes.
@@ -787,4 +788,45 @@ if __name__ == "__main__":
     heap_sort(heap)
     print(heap)
     # Output: [None, 1, 2, 3, 5, 7, 10, 12, 17, 19]
+```
+## Priority Queue
+```python
+def get_maximum(heap):
+    heap_size = len(heap) - 1
+    max_item = heap[1]
+
+    heap[1] = heap[heap_size]
+    heap_size -= 1 
+
+    max_heapify(heap, heap_size, 1)
+
+    return max_item    
+
+
+def insert_node(heap, heap_size, node):
+    heap_size += 1
+    heap[heap_size] = node
+
+    i = heap_size
+    while i > 1 and heap[i] > heap[parent(i)]:
+        heap[parent(i)], heap[i] = heap[i], heap[parent(i)]
+        i = parent(i) 
+
+    return heap_size
+
+
+if __name__ == "__main__":
+    heap = [None,19,7,17,3,5,12,10,1,2]
+
+    # Get the Max Priority Value
+    print(get_maximum(heap)) # Output: 19
+    print(heap) # Output: [None, 17, 7, 12, 3, 5, 2, 10, 1, 2]
+
+    # Insertion
+    insert_node(heap, 8, 100)
+    print(heap) # Output [None, 100, 17, 12, 7, 5, 2, 10, 1, 3]
+
+    # Insertion
+    insert_node(heap, 8, 100)
+    print(heap) # Output [None, 100, 17, 12, 7, 5, 2, 10, 1, 3]
 ```
