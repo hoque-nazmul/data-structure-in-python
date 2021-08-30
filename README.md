@@ -17,6 +17,7 @@
 - [Tree Traversals (PreOrder,PostOrder,InOrder)](#tree-traversals-preorderpostorderinorder)
 - [Binary Search Tree](#binary-search-tree)
 - [Heap](#heap)
+- [Heap Sort](#heap-sort)
 
 ## List 
 - Python's list (Mutable) are implemented as dynamic arrays behind the scenes.
@@ -769,4 +770,21 @@ if __name__ == "__main__":
     print(heap)
     build_max_heap(heap)
     print(heap)
+```
+## Heap Sort
+```python
+def heap_sort(heap):
+    build_max_heap(heap)
+    heap_size = len(heap) - 1
+
+    for i in range(heap_size, 1, -1):
+        heap[1], heap[i] = heap[i], heap[1]
+        heap_size -= 1
+        max_heapify(heap, heap_size, 1)
+
+if __name__ == "__main__":
+    heap = [None, 12, 7, 1, 3, 10, 17, 19, 2, 5]
+    heap_sort(heap)
+    print(heap)
+    # Output: [None, 1, 2, 3, 5, 7, 10, 12, 17, 19]
 ```
