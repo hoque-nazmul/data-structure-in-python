@@ -16,6 +16,7 @@
 - [Tree](#tree)
 - [Tree Traversals (PreOrder,PostOrder,InOrder)](#tree-traversals-preorderpostorderinorder)
 - [Binary Search Tree](#binary-search-tree)
+- [Heap](#heap)
 
 ## List 
 - Python's list (Mutable) are implemented as dynamic arrays behind the scenes.
@@ -701,4 +702,71 @@ if __name__ == "__main__":
         root = bst_delete(root, node)
         print("BST")
         in_order(root)
+```
+
+## Heap
+```python
+heap = [None] * 10 
+
+heap[1] = 19 
+heap[1*2] = 7
+heap[1*2+1] = 17
+
+heap[2 * 2] = 3
+heap[2*2+1] = 5
+
+heap[3 * 2] = 12
+heap[3 * 2 + 1] = 10 
+
+heap[4 * 2] = 1 
+heap[4 * 2 + 1] = 2
+
+# Find the left, right, parent index
+def left(i):
+    return i * 2 
+def right(i):
+    return i * 2 + 1 
+def parent(i):
+    return i // 2 
+
+
+def is_max_heap(heap):
+    n = len(heap) - 1
+    for i in range(n, 1, -1):
+        p = parent(i)
+
+        if heap[p] < heap[i]:
+            return False 
+
+    return True
+
+
+def max_heapify(heap, heap_size, i):
+    left_child = left(i)
+    right_child = right(i)
+
+    if left_child <= heap_size and heap[left_child] > heap[i]:
+        largest = left_child 
+    else:
+        largest = i 
+
+    if right_child <= heap_size and heap[right_child] > heap[largest]:
+        largest = right_child 
+
+    if largest != i:
+        heap[i], heap[largest] = heap[largest], heap[i]
+        max_heapify(heap, heap_size, largest)
+
+
+def build_max_heap(heap):
+    heap_size = len(heap) - 1
+
+    for i in range(heap_size // 2, 0, -1):
+        max_heapify(heap, heap_size, i)
+
+
+if __name__ == "__main__":
+    print(heap)
+    build_max_heap(heap)
+    print(heap)
 ```
