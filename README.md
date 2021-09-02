@@ -17,6 +17,11 @@
 - [Tree Traversals (PreOrder,PostOrder,InOrder)](#tree-traversals-preorderpostorderinorder)
 - [Binary Search Tree](#binary-search-tree)
 - [Heap](#heap)
+---
+# Algorithm
+- [Searching Algorithm](#searching-algorith)
+    - [Linear Search](#linear-search)
+    - [Binary Search](#binary-search)
 
 ## List 
 - Python's list (Mutable) are implemented as dynamic arrays behind the scenes.
@@ -769,4 +774,43 @@ if __name__ == "__main__":
     print(heap)
     build_max_heap(heap)
     print(heap)
+```
+# Searching Algorithm
+## Linear Search
+```python
+nums = [44, 32, 64, 75, 43, 54, 76]
+
+def linear_search(nums, x):
+    length = len(nums)
+    for i in range(length):
+        if nums[i] == x:
+            return i 
+    return -1 
+
+print(linear_search(nums, 43)) # Output: 4
+print(linear_search(nums, 100)) # Output: -1
+```
+## Binary Search
+```python
+li = [21, 23, 25, 34, 37, 38, 40, 45, 49, 50, 55, 58, 60]
+
+def binary_search(nums, x):
+    left = 0
+    right = len(nums) - 1 
+
+    while left <= right:
+        mid = (left + right) // 2 
+
+        if nums[mid] == x:
+            return mid 
+
+        if nums[mid] < x: 
+            left = mid + 1
+        else:
+            right = mid - 1 
+        
+    return -1 
+
+print(binary_search(li, 25)) # Output: 2
+print(binary_search(li, 100)) # Output: -1
 ```
